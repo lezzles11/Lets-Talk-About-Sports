@@ -8,9 +8,6 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <h1>Let's talk about sports.</h1>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
   </Layout>
 )
 

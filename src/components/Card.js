@@ -4,15 +4,20 @@ function Card({ title, color, text }) {
   const style = {
     backgroundColor: `${color}`,
   }
+  const width = {
+    width: "100%",
+  }
 
   return (
-    <div className="card" style={style}>
-      <div className="card-body">
-        <div className="card-title">
-          <h4 style={{ color: "white" }}> {title} </h4>
-        </div>
-        <div className="card-text">
-          <p style={{ color: "white" }}>{text}</p>{" "}
+    <div style={width}>
+      <div className="card" style={style}>
+        <div className="card-body">
+          <div className="card-title justify-content-center row">
+            <h3 style={{ color: "white" }}>{text}</h3>{" "}
+          </div>
+          <div className="card-text justify-content-center row">
+            <h5 style={{ color: "white" }}> {title} </h5>
+          </div>
         </div>
       </div>
     </div>

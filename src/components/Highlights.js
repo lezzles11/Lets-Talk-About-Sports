@@ -18,7 +18,7 @@ const Highlights = () => {
         <div className="row">
           <div className="col">
             {" "}
-            <Card title="Statistics" color="#1e88e5 " />
+            <Card title="City" text="Los Angeles" color="#1e88e5 " />
           </div>
           <div className="col">
             {" "}
