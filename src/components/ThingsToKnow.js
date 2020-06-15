@@ -1,9 +1,9 @@
 import React from "react"
-
+import Card from "./Card"
 const ThingsToKnow = () => {
   return (
     <div>
-      <h1> Cool things to know </h1>
+      <h2> Cool things to know </h2>
     </div>
   )
 }

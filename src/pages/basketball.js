@@ -17,6 +17,8 @@ export default function Basketball() {
           <Team />
         </div>
       </div>
+      <br />
+      <br />
       <div className="row">
         <div className="col">
           <ThingsToKnow />{" "}
