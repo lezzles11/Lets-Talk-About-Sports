@@ -7,9 +7,12 @@ const Highlights = () => {
       // TO DO: RENDER LAST GAME, last information
       <h2>Highlights</h2>
       <p>So you can pretend you actually saw the game</p>
+      <h5>Some sentence starters: </h5>
+      <p>Did you know that... </p>
       <p>
-        Did you know that... (fill in the blank with these cool statistics
-        below)
+        {" "}
+        Yes, cannot believe they scored a (fill in the score here) - that was
+        crazy!
       </p>
       <div className="container">
         <div className="row">
