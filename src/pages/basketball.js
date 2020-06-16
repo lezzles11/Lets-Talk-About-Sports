@@ -4,6 +4,7 @@ import Team from "../components/Team"
 import ThingsToKnow from "../components/ThingsToKnow"
 import Highlights from "../components/Highlights"
 import "../components/style.css"
+import NBATeams from "../components/NBATeams"
 
 function Form() {
   return (
@@ -20,21 +21,15 @@ export default function Basketball() {
   return (
     <Layout>
       <h1>Basketball</h1>
-      <Form />
-      <div className="row">
-        <div className="col">
-          <Highlights />
-        </div>
-        <div className="col">
-          <Team />
-        </div>
-      </div>
-      <br />
-      <br />
-      <div className="row">
-        <div className="col">
-          <ThingsToKnow />{" "}
-        </div>
+      <div
+        style={{
+          display: "flex",
+          textAlign: "center",
+          padding: 0,
+          margin: "40px 0",
+        }}
+      >
+        <NBATeams />
       </div>
     </Layout>
   )
