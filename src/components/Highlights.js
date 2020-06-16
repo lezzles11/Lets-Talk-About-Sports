@@ -14,29 +14,11 @@ const Highlights = () => {
         Yes, cannot believe they scored a (fill in the score here) - that was
         crazy!
       </p>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            {" "}
-            <Card title="City" text="Los Angeles" color="#1e88e5 " />
-          </div>
-          <div className="col">
-            {" "}
-            <Card title="Statistics" text="bloop" color="red" />
-          </div>
-        </div>{" "}
-        <br />
-        <div className="row">
-          {" "}
-          <div className="col">
-            {" "}
-            <Card title="Statistics" color="#43a047 " />
-          </div>
-          <div className="col">
-            {" "}
-            <Card title="Statistics" color="#fb8c00" />
-          </div>
-        </div>
+      <div className="col">
+        {" "}
+        TO DO: Render youtube video related to this tema - is there an api for
+        that?
+        <Card title="Youtube Clip" text="Best Shots" color="#43a047 " />
       </div>
     </div>
   )

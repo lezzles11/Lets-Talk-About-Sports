@@ -25,8 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="container-fluid">
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Navbar />
+      <Navbar websiteName={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
