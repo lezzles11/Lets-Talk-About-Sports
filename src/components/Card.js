@@ -9,7 +9,7 @@ function Card({ title, color, text }) {
   }
 
   return (
-    <div style={width}>
+    <div className="justify-content-center" style={width}>
       <div className="card" style={style}>
         <div className="card-body">
           <div className="card-title justify-content-center row">

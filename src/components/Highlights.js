@@ -3,6 +3,10 @@ import "./style.css"
 import Card from "./Card"
 import { Link } from "react-router-dom"
 
+function TeamInformation() {
+  return <div></div>
+}
+
 function GetData() {
   const [teams, setTeams] = useState([])
   useEffect(() => {
@@ -22,7 +26,10 @@ function GetData() {
     <div>
       <h1>hi</h1>hi
       {teams.map(team => (
-        <li key={team.idTeam}>{team.strCountry}</li>
+        <li key={team.idTeam}>
+          {team.strCountry}
+          {team.strDescriptionEN}
+        </li>
       ))}
     </div>
   )
@@ -49,11 +56,33 @@ const Highlights = () => {
         Yes, cannot believe they scored a (fill in the score here) - that was
         crazy!
       </p>
-      <div className="col">
-        {" "}
-        TO DO: Render youtube video related to this tema - is there an api for
-        that?
-        <Card title="Youtube Clip" text="Best Shots" color="#43a047 " />
+      <div className="row justify-content-center">
+        <div className="col justify-content-center">
+          {" "}
+          TO DO: Render youtube video related to this tema - is there an api for
+          that?
+          <Card title="Youtube Clip" text="Best Shots" color="#43a047 " />
+        </div>
+        <div className="col">
+          {" "}
+          TO DO: Render youtube video related to this tema - is there an api for
+          that?
+          <Card title="Instagram Handle" text="Best Shots" color="#43a047 " />
+        </div>{" "}
+      </div>
+      <div className="row justify-content-center">
+        <div className="col justify-content-center">
+          {" "}
+          TO DO: Render youtube video related to this tema - is there an api for
+          that?
+          <Card title="Youtube Clip" text="Best Shots" color="#43a047 " />
+        </div>
+        <div className="col">
+          {" "}
+          TO DO: Render youtube video related to this tema - is there an api for
+          that?
+          <Card title="Instagram Handle" text="Best Shots" color="#43a047 " />
+        </div>{" "}
       </div>
     </div>
   )
