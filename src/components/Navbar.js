@@ -11,11 +11,6 @@ export default function Navbar({ websiteName }) {
           </Link>
         </li>{" "}
         <li className="nav-item">
-          <Link to="/about" className="nav-link">
-            About
-          </Link>
-        </li>
-        <li className="nav-item">
           {" "}
           <Link to="/basketball/" className="nav-link">
             Basketball

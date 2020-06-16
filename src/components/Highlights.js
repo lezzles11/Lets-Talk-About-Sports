@@ -7,6 +7,17 @@ function TeamInformation() {
   return <div></div>
 }
 
+function Badge({ url, name }) {
+  return (
+    <div className="view overlay zoom">
+      <img src={url} className="img-fluid " alt="zoom" />
+      <div className="mask flex-center waves-effect waves-light">
+        <p className="white-text">{name}</p>
+      </div>
+    </div>
+  )
+}
+
 function GetData() {
   const [teams, setTeams] = useState([])
   useEffect(() => {
@@ -26,10 +37,9 @@ function GetData() {
     <div>
       <h1>hi</h1>hi
       {teams.map(team => (
-        <li key={team.idTeam}>
-          {team.strCountry}
-          {team.strDescriptionEN}
-        </li>
+        <div key={team.idTeam}>
+          <Badge url={team.strTeamBadge} name={team.strTeamShort} />
+        </div>
       ))}
     </div>
   )
