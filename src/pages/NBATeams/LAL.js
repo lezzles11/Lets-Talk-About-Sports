@@ -26,14 +26,19 @@ const TEAM_NAME = "Los Angeles Lakers"
 
 function OneGame({ game }) {
   return (
-    <div key={game.dateEvent}>
-      {game.strEvent}
-      <br />
-      Away Team: {game.strAwayTeam}
-      <br />
-      Away Score: {game.intAwayScore} <br />
-      Home Score: {game.intHomeScore}
-    </div>
+    <li className="timeline-element">
+      <div key={game.dateEvent}>
+        <h5 className="font-weight-bold dark-grey-text mb-3">
+          {game.strEvent}
+        </h5>
+        <p className="grey-text font-small">
+          <time datetime="2017-08-17">{game.dateEvent}</time>
+        </p>
+        <br />
+        Away Score: {game.intAwayScore} <br />
+        Home Score: {game.intHomeScore}
+      </div>
+    </li>
   )
 }
 export default function LAL() {
@@ -69,40 +74,41 @@ export default function LAL() {
   }
   console.log(gameResult)
   return (
-    <div className="row" style={{ display: "flex", flexWrap: "wrap" }}>
-      <div className="container">
-        {gameResult.map(game => (
-          <OneGame game={game} />
+    <div className="container">
+      <div className="row">
+        {teams.map(team => (
+          <div key={team.idTeam}>
+            <EachTeam
+              url={team.strTeamBadge}
+              name={team.strTeamShort}
+              description={team.strDescriptionEN}
+            />
+          </div>
         ))}
       </div>
-      {teams.map(team => (
-        <div key={team.idTeam}>
-          <EachTeam
-            url={team.strTeamBadge}
-            name={team.strTeamShort}
-            description={team.strDescriptionEN}
-          />
+      <div className="row" style={{ display: "flex", flexWrap: "wrap" }}>
+        <div className="container z-depth-1 my-5 py-5 px-4 px-lg-0">
+          <h3 className="font5 font-weight-bold text-center dark-grey-text pb-2">
+            {TEAM_NAME}
+          </h3>
+          <hr className="w-header my-4" />
+          <p className="lead text-center text-muted pt-2 mb-5">Recent Games</p>
+
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
+              <ol className="timeline">
+                {gameResult.map(game => (
+                  <OneGame game={game} />
+                ))}
+              </ol>
+            </div>
+          </div>
         </div>
-      ))}
-      <TestTimeline />
+      </div>
     </div>
   )
 }
-function OneEvent() {
-  return (
-    <li className="timeline-element">
-      <h5 className="font-weight-bold dark-grey-text mb-3">Game against ___</h5>
-      <p className="grey-text font-small">
-        <time datetime="2017-02-08">08 Feb 2017</time>
-      </p>
-      <p className="text-muted">
-        Home Score:
-        <br />
-        Away Score:
-      </p>
-    </li>
-  )
-}
+
 function EventWithImage() {
   return (
     <li className="timeline-element">
@@ -125,29 +131,5 @@ function EventWithImage() {
         ipsum fugiat aliquam alias.
       </p>
     </li>
-  )
-}
-function TestTimeline() {
-  return (
-    <div className="container z-depth-1 my-5 py-5 px-4 px-lg-0">
-      <h3 className="font5 font-weight-bold text-center dark-grey-text pb-2">
-        {TEAM_NAME}
-      </h3>
-      <hr className="w-header my-4" />
-      <p className="lead text-center text-muted pt-2 mb-5">Recent Games</p>
-
-      <div className="row">
-        <div className="col-lg-8 mx-auto">
-          <ol className="timeline">
-            <OneEvent />
-
-            <OneEvent />
-            <OneEvent />
-
-            <OneEvent />
-          </ol>
-        </div>
-      </div>
-    </div>
   )
 }
