@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import "../../components/style.css"
 import "./Timeline.css"
-function EachTeam({ url, name, description }) {
+import Card from "../../components/Card"
+function EachTeam({ url, name }) {
   const margin = {
     margin: "20px",
   }
@@ -12,7 +13,6 @@ function EachTeam({ url, name, description }) {
         <div className="mask flex-center waves-effect waves-light">
           <p className="white-text">{name}</p>
         </div>
-        <p>{description} </p>
       </div>
     </div>
   )
@@ -32,7 +32,7 @@ function OneGame({ game }) {
           {game.strEvent}
         </h5>
         <p className="grey-text font-small">
-          <time datetime="2017-08-17">{game.dateEvent}</time>
+          <time datetime={game.dateEvent}>{game.dateEvent}</time>
         </p>
         <br />
         Away Score: {game.intAwayScore} <br />
@@ -75,17 +75,18 @@ export default function LAL() {
   console.log(gameResult)
   return (
     <div className="container">
-      <div className="row">
+      <div className="row justify-content-center">
         {teams.map(team => (
           <div key={team.idTeam}>
-            <EachTeam
-              url={team.strTeamBadge}
-              name={team.strTeamShort}
-              description={team.strDescriptionEN}
-            />
+            <EachTeam url={team.strTeamBadge} name={team.strTeamShort} />
           </div>
         ))}
       </div>
+      {teams.map(team => (
+        <div key={team.idTeam}>
+          <BasicInfo team={team} />
+        </div>
+      ))}
       <div className="row" style={{ display: "flex", flexWrap: "wrap" }}>
         <div className="container z-depth-1 my-5 py-5 px-4 px-lg-0">
           <h3 className="font5 font-weight-bold text-center dark-grey-text pb-2">
@@ -103,6 +104,14 @@ export default function LAL() {
               </ol>
             </div>
           </div>
+        </div>
+
+        <div className="row">
+          {teams.map(team => (
+            <div key={team.idTeam}>
+              <CardDescription team={team} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -131,5 +140,145 @@ function EventWithImage() {
         ipsum fugiat aliquam alias.
       </p>
     </li>
+  )
+}
+
+function BasicInfo({ team }) {
+  return (
+    <div className="row">
+      <div className="col">
+        <Card title="Stadium" text={team.strStadium} color="#1e88e5" />
+      </div>
+
+      <div className="col">
+        <Card title="Year Formed" text={team.intFormedYear} color="red" />
+      </div>
+
+      <div className="col">
+        <Card title="Youtube Clip" text={team.strStadium} color="#43a047 " />
+      </div>
+      <div className="col">
+        <Card title="Youtube Clip" text={team.strStadium} color="#fb8c00" />
+      </div>
+    </div>
+  )
+}
+
+function CardDescription({ team }) {
+  return (
+    <div className="container mt-5">
+      <section className="mb-5">
+        <h3 className="text-center font-weight-bold mb-5">{team.strStadium}</h3>
+
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-body">
+                <div className="row h-100 d-flex align-items-center">
+                  <div className="col-lg-6">
+                    <p className="text-muted font-weight-light ml-3 mb-5">
+                      {team.strDescriptionEN}
+                    </p>
+                    <ul className="fa-ul mb-5 text-muted font-weight-light">
+                      <li className="mb-2">
+                        <span className="fa-li">
+                          <i className="fas fa-check green-text"></i>
+                        </span>
+                        Built in GPS
+                      </li>
+                      <li className="mb-2">
+                        <span className="fa-li">
+                          <i className="fas fa-check green-text"></i>
+                        </span>
+                        Heart Rate Sensor
+                      </li>
+                      <li className="mb-2">
+                        <span className="fa-li">
+                          <i className="fas fa-check green-text"></i>
+                        </span>
+                        Water Resistant 50 Meters
+                      </li>
+                      <li className="mb-2">
+                        <span className="fa-li">
+                          <i className="fas fa-check green-text"></i>
+                        </span>
+                        Comprehensive Workout App
+                      </li>
+                    </ul>
+                    <div className="d-flex justify-content-between ml-3">
+                      <button type="button" className="btn btn-primary mx-0">
+                        Purchase
+                      </button>
+                      <div className="text-center">
+                        <h4 className="mb-0">$399</h4>
+                        <small className="grey-text">+ $10 shipping fees</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div
+                      id="carousel-thumb"
+                      className="carousel slide carousel-thumbnails"
+                      data-ride="carousel"
+                    >
+                      <div
+                        className="carousel-inner text-center text-md-left"
+                        role="listbox"
+                      >
+                        <div className="carousel-item active">
+                          <img
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/17.jpg"
+                            alt="First slide"
+                            className="img-fluid"
+                          />
+                        </div>
+                        <div className="carousel-item">
+                          <img
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/18.jpg"
+                            alt="Second slide"
+                            className="img-fluid"
+                          />
+                        </div>
+                        <div className="carousel-item">
+                          <img
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/19.jpg"
+                            alt="Third slide"
+                            className="img-fluid"
+                          />
+                        </div>
+                      </div>
+                      <a
+                        className="carousel-control-prev"
+                        href="#carousel-thumb"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <span
+                          className="carousel-control-prev-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span className="sr-only">Previous</span>
+                      </a>
+                      <a
+                        className="carousel-control-next"
+                        href="#carousel-thumb"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <span
+                          className="carousel-control-next-icon"
+                          aria-hidden="true"
+                        ></span>
+                        <span className="sr-only">Next</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
