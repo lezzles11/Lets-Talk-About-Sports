@@ -9,7 +9,7 @@ function Badge({ url, name }) {
   return (
     <div style={margin}>
       <div className="view overlay zoom">
-        <Link to={`/MLBTeams/${name}`}>
+        <Link to={`/NBATeams/${name}`}>
           <img src={url} alt="zoom" />
           <div className="mask flex-center waves-effect waves-light">
             <p className="white-text">{name}</p>
@@ -19,7 +19,9 @@ function Badge({ url, name }) {
     </div>
   )
 }
-
+/*
+#TODO: Make sure you can render each page (each page should have a specific component )
+*/
 export default function NBATeams() {
   const [teams, setTeams] = useState([])
   useEffect(() => {
@@ -34,7 +36,7 @@ export default function NBATeams() {
     }
     makeApiCall()
   }, [])
-
+  console.log(teams)
   return (
     <div className="row" style={{ display: "flex", flexWrap: "wrap" }}>
       {teams.map(team => (
