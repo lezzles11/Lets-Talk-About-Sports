@@ -1,9 +1,7 @@
 import React from "react"
-import Navbar from "../components/Navbar"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-
+import TestData from "../components/TestData"
 function IndexPage() {
   const style = {
     fontSize: "5em",
@@ -18,20 +16,10 @@ function IndexPage() {
         Let's talk about sports.
       </h1>{" "}
       <p>
-        <table>
-          <tr>
-            <th>
-              A quick nonsense way to talk about sports so that one can impress
-              one's
-            </th>
-            <th>(fill in the blank)</th>
-          </tr>{" "}
-          <tr>
-            <th></th>
-            <th>(significant other, boss, client, etc.).</th>
-          </tr>
-        </table>
+        A quick nonsense way to talk about sports so that one can impress one's
+        (fill in the blank)
       </p>
+      <TestData />
     </Layout>
   )
 }
