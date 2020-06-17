@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "../../components/style.css"
-
+import "./Timeline.css"
 function EachTeam({ url, name, description }) {
   const margin = {
     margin: "20px",
@@ -21,8 +21,8 @@ function EachTeam({ url, name, description }) {
 #TODO: Make sure you can render each page (each page should have a specific component )
 */
 
-const TEAM_ID = "134880"
-const TEAM_NAME = "ATL"
+const TEAM_ID = "134867"
+const TEAM_NAME = "Los Angeles Lakers"
 
 function OneGame({ game }) {
   return (
@@ -36,7 +36,7 @@ function OneGame({ game }) {
     </div>
   )
 }
-export default function ATL() {
+export default function LAL() {
   const [teams, setTeams] = useState([])
   const [gameResult, setGameResult] = useState([])
   const [latestResult, setLatestResult] = useState(false)
@@ -84,6 +84,70 @@ export default function ATL() {
           />
         </div>
       ))}
+      <TestTimeline />
+    </div>
+  )
+}
+function OneEvent() {
+  return (
+    <li className="timeline-element">
+      <h5 className="font-weight-bold dark-grey-text mb-3">Game against ___</h5>
+      <p className="grey-text font-small">
+        <time datetime="2017-02-08">08 Feb 2017</time>
+      </p>
+      <p className="text-muted">
+        Home Score:
+        <br />
+        Away Score:
+      </p>
+    </li>
+  )
+}
+function EventWithImage() {
+  return (
+    <li className="timeline-element">
+      <h5 className="font-weight-bold dark-grey-text mb-3">
+        Got the first 100 users
+      </h5>
+      <p className="grey-text font-small">
+        <time datetime="2017-08-17">17 Aug 2017</time>
+      </p>
+      <p>
+        <img
+          className="img-fluid z-depth-1-half rounded"
+          src="https://mdbootstrap.com/img/Photos/Horizontal/Work/12-col/img%20(6).jpg"
+          alt="..."
+        />
+      </p>
+      <p className="text-muted">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam
+        adipisci reiciendis porro natus laudantium similique. Explicabo amet
+        ipsum fugiat aliquam alias.
+      </p>
+    </li>
+  )
+}
+function TestTimeline() {
+  return (
+    <div className="container z-depth-1 my-5 py-5 px-4 px-lg-0">
+      <h3 className="font5 font-weight-bold text-center dark-grey-text pb-2">
+        {TEAM_NAME}
+      </h3>
+      <hr className="w-header my-4" />
+      <p className="lead text-center text-muted pt-2 mb-5">Recent Games</p>
+
+      <div className="row">
+        <div className="col-lg-8 mx-auto">
+          <ol className="timeline">
+            <OneEvent />
+
+            <OneEvent />
+            <OneEvent />
+
+            <OneEvent />
+          </ol>
+        </div>
+      </div>
     </div>
   )
 }
