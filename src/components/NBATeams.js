@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import "./style.css"
+
 function Badge({ url, name }) {
   const margin = {
     margin: "20px",
