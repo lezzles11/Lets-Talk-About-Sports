@@ -4,20 +4,20 @@ import { Link } from "gatsby"
 export default function Navbar({ websiteName }) {
   return (
     <div>
-      <ul className="nav justify-content-center grey lighten-4 py-4">
+      <ul className="nav justify-content-left  lighten-4 py-4">
         <li className="nav-item">
-          <Link to="/" className="nav-link">
+          <Link to="/" className="font24 nav-link">
             {websiteName}
           </Link>
         </li>{" "}
         <li className="nav-item">
           {" "}
-          <Link to="/basketball/" className="nav-link">
+          <Link to="/basketball/" className="font24 nav-link">
             Basketball
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/soccer/" className="nav-link">
+          <Link to="/soccer/" className="font24 nav-link">
             Soccer
           </Link>
         </li>

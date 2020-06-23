@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "../../components/style.css"
-
+import { Route } from "react-router-dom"
 function EachTeam({ url, name, description }) {
   const margin = {
     margin: "20px",

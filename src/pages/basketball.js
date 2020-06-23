@@ -12,7 +12,7 @@ function Form() {
       <form>
         <input type="text" />
         <br />
-        <button className="btn button">Search for Team</button>{" "}
+        <button className="btn button font24 ">Search for Team</button>{" "}
       </form>
     </div>
   )
@@ -20,7 +20,9 @@ function Form() {
 export default function Basketball() {
   return (
     <Layout>
-      <h1>Basketball</h1>
+      <div className="row justify-content-center">
+        <h1 className="font24">Basketball</h1>
+      </div>
       <div
         style={{
           display: "flex",

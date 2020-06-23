@@ -12,10 +12,13 @@ function IndexPage() {
       <br />
       <br />
       <br />
-      <h1 style={style} className="font11">
+      <h1 style={style} className="font24 ">
         Let's talk about sports.
       </h1>{" "}
-      <p>
+      <a href="www.google.com" target="_blank" rel="noopener noreferrer">
+        Work
+      </a>
+      <p className="font24">
         A quick nonsense way to talk about sports so that one can impress one's
         (fill in the blank)
       </p>
