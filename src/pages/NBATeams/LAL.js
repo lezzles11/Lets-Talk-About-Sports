@@ -6,22 +6,11 @@ import Layout from "../../components/layout"
 import { FiFacebook } from "react-icons/fi"
 import SocialMedia from "../../components/BasketballPage/SocialMedia"
 import OneGame from "../../components/BasketballPage/OneGame"
+import EachTeam from "../../components/BasketballPage/EachTeam"
+import BasicInfo from "../../components/BasketballPage/BasicInfo"
 import EventWithImage from "../../components/BasketballPage/EventWithImage"
-function EachTeam({ url, name }) {
-  const margin = {
-    margin: "20px",
-  }
-  return (
-    <div style={margin}>
-      <div className="view overlay zoom">
-        <img src={url} alt="zoom" />
-        <div className="mask flex-center waves-effect waves-light">
-          <p className="white-text font24">{name}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
+import CardDescription from "../../components/BasketballPage/CardDescription"
+
 /*
 #TODO: Make sure you can render each page (each page should have a specific component )
 */
@@ -124,56 +113,5 @@ export default function LAL() {
         </div>
       </div>
     </Layout>
-  )
-}
-
-/*
-#TODO: Make sure you reformat the size of the cards
-#TODO: External link still not working
-
-#TODO: Add footer 
-*/
-function BasicInfo({ team }) {
-  let location = team.strStadiumLocation
-  let newLocation = location.split("")
-  console.log(newLocation[0])
-  return (
-    <div className="row">
-      <div className="col">
-        <Card title="Stadium" text={team.strStadium} color="#1e88e5" />
-      </div>
-
-      <div className="col">
-        <Card title="Year Formed" text={team.intFormedYear} color="red" />
-      </div>
-
-      <div className="col">
-        <Card title="Location" text="Los Angeles" color="#43a047 " />
-      </div>
-    </div>
-  )
-}
-
-function CardDescription({ team }) {
-  return (
-    <div className="container mt-5">
-      <section className="mb-5">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="card">
-              <div className="card-body">
-                <div className="row justify-content-center">
-                  <h2 className="font24">Read more about the {team.strTeam}</h2>
-                </div>
-                <div className="row justify-content-left"></div>
-                <p className="font24 text-muted font-weight-light ml-3 mb-5">
-                  {team.strDescriptionEN}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
   )
 }
