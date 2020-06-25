@@ -13,15 +13,15 @@ import CardDescription from "../../components/BasketballPage/CardDescription"
 #TODO: Make sure you can render each page (each page should have a specific component )
 */
 
-const TEAM_ID = "134880"
-const TEAM_NAME = "Atlanta Hawks"
+const TEAM_ID = "134883"
+const TEAM_NAME = "Orlando Magic"
 
 OneGame.defaultProps = {
   strThumb:
     "https://cdn.nba.net/nba-drupal-prod/2019-09/SEO-image-NBA-logoman.jpg",
 }
 
-export default function ATL() {
+export default function ORL() {
   const [teams, setTeams] = useState([])
   const [gameResult, setGameResult] = useState([])
   const [latestResult, setLatestResult] = useState(false)
