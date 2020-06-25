@@ -15,9 +15,6 @@ function IndexPage() {
       <h1 style={style} className="font24 ">
         Let's talk about sports.
       </h1>{" "}
-      <a href="www.google.com" target="_blank" rel="noopener noreferrer">
-        Work
-      </a>
       <p className="font24">
         A quick nonsense way to talk about sports so that one can impress one's
         (fill in the blank)
@@ -27,4 +24,5 @@ function IndexPage() {
   )
 }
 
+// #TODO: Update and switch the fill int he blank so it swipes up automatically
 export default IndexPage

@@ -1,9 +1,12 @@
 import React, { Component, useState, useEffect } from "react"
 import "../../components/style.css"
 import "./Timeline.css"
-import Link from "../../components/Link"
-import Card from "../../components/Card"
+import Card from "../../components/BasketballPage/Card"
 import Layout from "../../components/layout"
+import { FiFacebook } from "react-icons/fi"
+import SocialMedia from "../../components/BasketballPage/SocialMedia"
+import OneGame from "../../components/BasketballPage/OneGame"
+import EventWithImage from "../../components/BasketballPage/EventWithImage"
 function EachTeam({ url, name }) {
   const margin = {
     margin: "20px",
@@ -26,25 +29,11 @@ function EachTeam({ url, name }) {
 const TEAM_ID = "134867"
 const TEAM_NAME = "Los Angeles Lakers"
 
-function OneGame({ game }) {
-  return (
-    <li className="timeline-element">
-      <div key={game.dateEvent}>
-        <h5 className="font24 font-weight-bold dark-grey-text mb-3">
-          {game.strEvent}
-        </h5>
-        <p className="font24 grey-text font-small">
-          <time datetime={game.dateEvent}>{game.dateEvent}</time>
-        </p>
-        <br />
-        <p className="font24">
-          Away Score: {game.intAwayScore} <br />
-          Home Score: {game.intHomeScore}
-        </p>
-      </div>
-    </li>
-  )
+OneGame.defaultProps = {
+  strThumb:
+    "https://cdn.nba.net/nba-drupal-prod/2019-09/SEO-image-NBA-logoman.jpg",
 }
+
 export default function LAL() {
   const [teams, setTeams] = useState([])
   const [gameResult, setGameResult] = useState([])
@@ -87,6 +76,15 @@ export default function LAL() {
             </div>
           ))}
         </div>
+        <div className="row justify-content-center">
+          {" "}
+          {teams.map(team => (
+            <div key={team.idTeam}>
+              <SocialMedia team={team} />
+            </div>
+          ))}
+        </div>
+
         {teams.map(team => (
           <div key={team.idTeam}>
             <BasicInfo team={team} />
@@ -105,14 +103,17 @@ export default function LAL() {
             <div className="row">
               <div className="col-lg-8 mx-auto">
                 <ol className="timeline">
-                  {gameResult.map(game => (
-                    <OneGame game={game} />
-                  ))}
+                  {gameResult.map(game =>
+                    game.strThumb ? (
+                      <EventWithImage game={game} />
+                    ) : (
+                      <OneGame game={game} />
+                    )
+                  )}
                 </ol>
               </div>
             </div>
           </div>
-
           <div className="row">
             {teams.map(team => (
               <div key={team.idTeam}>
@@ -123,31 +124,6 @@ export default function LAL() {
         </div>
       </div>
     </Layout>
-  )
-}
-
-function EventWithImage() {
-  return (
-    <li className="timeline-element">
-      <h5 className="font-weight-bold dark-grey-text mb-3">
-        Got the first 100 users
-      </h5>
-      <p className="grey-text font-small">
-        <time datetime="2017-08-17">17 Aug 2017</time>
-      </p>
-      <p>
-        <img
-          className="img-fluid z-depth-1-half rounded"
-          src="https://mdbootstrap.com/img/Photos/Horizontal/Work/12-col/img%20(6).jpg"
-          alt="..."
-        />
-      </p>
-      <p className="text-muted">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam
-        adipisci reiciendis porro natus laudantium similique. Explicabo amet
-        ipsum fugiat aliquam alias.
-      </p>
-    </li>
   )
 }
 
@@ -189,7 +165,7 @@ function CardDescription({ team }) {
                 <div className="row justify-content-center">
                   <h2 className="font24">Read more about the {team.strTeam}</h2>
                 </div>
-                <br />
+                <div className="row justify-content-left"></div>
                 <p className="font24 text-muted font-weight-light ml-3 mb-5">
                   {team.strDescriptionEN}
                 </p>
