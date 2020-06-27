@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import TestData from "../components/TestData"
 function IndexPage() {
   const style = {
     fontSize: "5em",
@@ -19,7 +18,14 @@ function IndexPage() {
         A quick nonsense way to talk about sports so that one can impress one's
         (fill in the blank)
       </p>
-      <TestData />
+      <a
+        href="https://www.theschooloflife.com/thebookoflife/the-joys-of-sport/"
+        target="_blank"
+      >
+        <button className="font24 btn btn-outline-dark waves-effect">
+          The joys of sport
+        </button>
+      </a>
     </Layout>
   )
 }
