@@ -1,19 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import "../components/style.css"
-import NBATeams from "../components/NBATeams"
+import NBATeams from "../components/BasketballPage/NBATeams"
 
-function Form() {
-  return (
-    <div>
-      <form>
-        <input type="text" />
-        <br />
-        <button className="btn button font24 ">Search for Team</button>{" "}
-      </form>
-    </div>
-  )
-}
 export default function Basketball() {
   return (
     <Layout>

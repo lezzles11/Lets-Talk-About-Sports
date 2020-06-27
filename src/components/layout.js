@@ -31,7 +31,7 @@ function Footer() {
           <p style={{ padding: "1px", color: "white" }}>
             {" "}
             &nbsp;&nbsp;&nbsp;{" "}
-            <span className=" orange darken-3 container">
+            <span className="font24 orange darken-3 container">
               built during the corona
             </span>
             <br />
@@ -39,16 +39,24 @@ function Footer() {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             {` `}
             <span className="blue accent-4 container">
-              <a style={{ color: "white" }} href="https://www.lesleycheung.com">
+              <a
+                style={{ color: "white" }}
+                className="font24"
+                href="https://www.lesleycheung.com"
+              >
                 built by lezzles{" "}
               </a>
             </span>
             <br />
             {` `}&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span className="pink accent-4 container">
+            <span className="font24 pink accent-4 container">
               built with{" "}
-              <a style={{ color: "white" }} href="https://www.gatsbyjs.org">
+              <a
+                className="font24"
+                style={{ color: "white" }}
+                href="https://www.gatsbyjs.org"
+              >
                 Javascript
               </a>
             </span>

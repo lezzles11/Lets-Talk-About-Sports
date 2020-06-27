@@ -1,27 +1,27 @@
-import React, {  useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import "../../components/style.css"
-import "./Timeline.css"
+import "../NBATeams/Timeline.css"
 import Layout from "../../components/layout"
-import SocialMedia from "../../components/BasketballPage/SocialMedia"
-import OneGame from "../../components/BasketballPage/OneGame"
-import EachTeam from "../../components/BasketballPage/EachTeam"
-import BasicInfo from "../../components/BasketballPage/BasicInfo"
-import EventWithImage from "../../components/BasketballPage/EventWithImage"
-import CardDescription from "../../components/BasketballPage/CardDescription"
+import SocialMedia from "../../components/OnEveryPage/SocialMedia"
+import OneGame from "../../components/OnEveryPage/OneGame"
+import EachTeam from "../../components/OnEveryPage/EachTeam"
+import BasicInfo from "../../components/OnEveryPage/BasicInfo"
+import EventWithImage from "../../components/OnEveryPage/EventWithImage"
+import CardDescription from "../../components/OnEveryPage/CardDescription"
 
 /*
 #TODO: Make sure you can render each page (each page should have a specific component )
 */
 
-const TEAM_ID = "134867"
-const TEAM_NAME = "Los Angeles Lakers"
+const TEAM_ID = "133811"
+const TEAM_NAME = "Sheffield United"
 
 OneGame.defaultProps = {
   strThumb:
     "https://cdn.nba.net/nba-drupal-prod/2019-09/SEO-image-NBA-logoman.jpg",
 }
 
-export default function LAL() {
+export default function Sheffield() {
   const [teams, setTeams] = useState([])
   const [gameResult, setGameResult] = useState([])
   const [latestResult, setLatestResult] = useState(false)
@@ -36,7 +36,6 @@ export default function LAL() {
     }
     makeApiCall()
   }, [])
-  console.log(teams)
   useEffect(() => {
     const resultApiCall = async () => {
       const resultUrl = `https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=${TEAM_ID}`
