@@ -1,38 +1,17 @@
 module.exports = {
   siteMetadata: {
     title: `Lets Talk Sports`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Basketball and Soccer updates`,
+    author: `@lezzles11`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/markdown-pages`,
-        name: `markdown-pages`,
-      },
-    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: "gatsby-remark-external-links",
-            options: {
-              target: "_self",
-              rel: "nofollow",
-            },
-          },
-        ],
       },
     },
     `gatsby-transformer-sharp`,
