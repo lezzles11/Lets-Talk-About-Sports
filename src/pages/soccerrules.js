@@ -8,11 +8,11 @@ function Soccerrules() {
       <div className="row justify-content-center">
         <h1>Soccer Rules</h1>
       </div>{" "}
-      <br />
+      <br />{" "}
       <div className="row justify-content-center">
         <Video
-          videoSrcURL="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          videoTitle="Official Music Video on YouTube"
+          videoSrcURL="https://www.youtube.com/embed/qg566N-eDWo"
+          videoTitle="Soccer Rules"
         />
       </div>
     </Layout>
