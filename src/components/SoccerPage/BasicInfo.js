@@ -1,5 +1,6 @@
 import React from "react"
 import Card from "./Card"
+
 const BasicInfo = ({ team }) => {
   let location = team.strStadiumLocation
   let newLocation = location.split("")

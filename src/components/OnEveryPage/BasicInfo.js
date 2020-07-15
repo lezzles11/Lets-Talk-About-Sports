@@ -15,7 +15,11 @@ const BasicInfo = ({ team }) => {
       </div>
 
       <div className="col">
-        <Card title="Location" text="Los Angeles" color="#43a047 " />
+        <Card
+          title="Location"
+          text={team.strStadiumLocation}
+          color="#43a047 "
+        />
       </div>
     </div>
   )
